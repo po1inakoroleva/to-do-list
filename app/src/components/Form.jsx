@@ -13,7 +13,7 @@ import { actions as tasksActions } from '../slices/tasksSlice';
 const TaskForm = () => {
   const dispatch = useDispatch();
   const validationSchema = Yup.object().shape({
-    task: Yup.string().required().max(100, 'Максимум 100 знаков'),
+    task: Yup.string().required().max(100, 'The maximum length is 100 characters'),
   });
 
   const formik = useFormik({
@@ -29,7 +29,7 @@ const TaskForm = () => {
   });
 
   return (
-    <Container fluid className="h-100 formContainer">
+    <Container fluid className="h-100 form-container">
       <h1>What are you going to do today?</h1>
       <Row className="justify-content-center align-content-center h-100">
         <Form onSubmit={formik.handleSubmit} className=" col-md-6 py-1 border rounded-2">
@@ -58,7 +58,7 @@ const TaskForm = () => {
               </svg>
             </button>
           </InputGroup>
-          <Form.Control.Feedback type="invalid" tooltip>{formik.errors.task}</Form.Control.Feedback>
+          {formik.errors.task ? <div className="invalid-feedback">{formik.errors.task}</div> : null}
         </Form>
       </Row>
     </Container>
