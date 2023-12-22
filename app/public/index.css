@@ -1,14 +1,18 @@
-.formContainer {
+.form-container {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 170px;
+  margin-top: 150px;
 }
 
-.tasksList {
+.tasks-list {
   margin-left: auto;
   margin-right: auto;
   margin-top: 30px;
   font-family: 'Courier New', Courier, monospace;
+}
+
+.task {
+  font-size: 25px;
 }
 
 h1 {
