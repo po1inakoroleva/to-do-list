@@ -8,6 +8,7 @@ const tasksSlice = createSlice({
   initialState,
   reducers: {
     addTask: tasksAdapter.addOne,
+    setTasks: tasksAdapter.addMany,
     removeTask: (state, { payload }) => {
       tasksAdapter.removeOne(state, payload);
     },
