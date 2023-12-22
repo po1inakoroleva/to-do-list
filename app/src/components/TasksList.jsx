@@ -8,8 +8,8 @@ import { selectors as tasksSelectors } from '../slices/tasksSlice';
 const TaskList = () => {
   const tasks = useSelector(tasksSelectors.selectAll);
   return (
-    <Container fluid className="h-100 tasksList">
-      {tasks.map(({ name }) => <Task taskName={name} />)}
+    <Container fluid className="h-100 tasks-list">
+      {tasks.map(({ name, id }) => <Task key={id} name={name} id={id} />)}
     </Container>
   );
 };
