@@ -13,7 +13,7 @@ import { actions as tasksActions } from '../slices/tasksSlice';
 const TaskForm = () => {
   const dispatch = useDispatch();
   const validationSchema = Yup.object().shape({
-    task: Yup.string().required().max(100, 'The maximum length is 100 characters'),
+    task: Yup.string().required().trim().max(100, 'The maximum length is 100 characters'),
   });
 
   const formik = useFormik({

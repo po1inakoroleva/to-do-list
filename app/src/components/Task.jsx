@@ -26,7 +26,7 @@ const Task = ({ name, id }) => {
   const [editing, setEditing] = useState(false);
 
   const validationSchema = Yup.object().shape({
-    newTask: Yup.string().required().max(100, 'The maximum length is 100 characters'),
+    newTask: Yup.string().required().trim().max(100, 'The maximum length is 100 characters'),
   });
 
   const formik = useFormik({
