@@ -1,5 +1,11 @@
+build:
+	npm run build
+
 install:
-	make -C app install
+	npm ci
+
+lint:
+	npx eslint --ext js,jsx --no-eslintrc --config .eslintrc.yml .
 
 start:
-	make -C app start
+	npm start
